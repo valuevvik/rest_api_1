@@ -1,0 +1,64 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="LanguageDetectionInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="altgraph" />
+          <option value="auto-py-to-exe" />
+          <option value="blinker" />
+          <option value="bottle" />
+          <option value="bottle-websocket" />
+          <option value="certifi" />
+          <option value="cffi" />
+          <option value="charset-normalizer" />
+          <option value="click" />
+          <option value="colorama" />
+          <option value="contourpy" />
+          <option value="customtkinter" />
+          <option value="cycler" />
+          <option value="darkdetect" />
+          <option value="Eel" />
+          <option value="et_xmlfile" />
+          <option value="Flask" />
+          <option value="Flask-SQLAlchemy" />
+          <option value="fonttools" />
+          <option value="future" />
+          <option value="gevent" />
+          <option value="gevent-websocket" />
+          <option value="greenlet" />
+          <option value="idna" />
+          <option value="importlib_resources" />
+          <option value="itsdangerous" />
+          <option value="Jinja2" />
+          <option value="kiwisolver" />
+          <option value="MarkupSafe" />
+          <option value="matplotlib" />
+          <option value="numpy" />
+          <option value="openpyxl" />
+          <option value="packaging" />
+          <option value="pandas" />
+          <option value="pefile" />
+          <option value="pillow" />
+          <option value="pycparser" />
+          <option value="pyinstaller" />
+          <option value="pyinstaller-hooks-contrib" />
+          <option value="pyparsing" />
+          <option value="python-dateutil" />
+          <option value="pywin32-ctypes" />
+          <option value="requests" />
+          <option value="six" />
+          <option value="SQLAlchemy" />
+          <option value="typing_extensions" />
+          <option value="tzdata" />
+          <option value="urllib3" />
+          <option value="Werkzeug" />
+          <option value="xlsxwriter" />
+          <option value="zope.event" />
+          <option value="zope.interface" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
