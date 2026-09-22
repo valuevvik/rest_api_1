@@ -1,12 +1,12 @@
 # app.py
-from fastapi import FastAPI, HTTPException, Query
-from pydantic import BaseModel, Field
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
 from datetime import datetime
 from typing import Optional
 import uuid
 
-app = FastAPI()
-ads = {}
+app = FastAPI(title="Advertisement API")
+ads: dict[str, "Ad"] = {}
 
 
 class AdCreate(BaseModel):
@@ -53,7 +53,9 @@ def update_ad(advertisement_id: str, data: AdUpdate):
     ad = ads.get(advertisement_id)
     if not ad:
         raise HTTPException(404, "not found")
-    updated = ad.model_copy(update={k: v for k, v in data.model_dump().items() if v is not None})
+    updated = ad.model_copy(
+        update={k: v for k, v in data.model_dump().items() if v is not None}
+    )
     ads[advertisement_id] = updated
     return updated
 
@@ -71,8 +73,11 @@ def search_ads(
     description: Optional[str] = None,
     price: Optional[float] = None,
     author: Optional[str] = None,
+    created_at_from: Optional[datetime] = None,
+    created_at_to: Optional[datetime] = None,
 ):
-    result = ads.values()
+    result = list(ads.values())
+
     if title is not None:
         result = [a for a in result if title.lower() in a.title.lower()]
     if description is not None:
@@ -81,4 +86,9 @@ def search_ads(
         result = [a for a in result if a.price == price]
     if author is not None:
         result = [a for a in result if author.lower() in a.author.lower()]
-    return list(result)
+    if created_at_from is not None:
+        result = [a for a in result if a.created_at >= created_at_from]
+    if created_at_to is not None:
+        result = [a for a in result if a.created_at <= created_at_to]
+
+    return result
